@@ -1,0 +1,28 @@
+let light="🕯";
+let count= 20;
+let candlelight=true;
+let make=[]
+ function candle(candlewithlight,candlewithoutlight){
+    return " ".repeat(candlewithoutlight - candlewithlight) + light.repeat(2 * candlewithlight - 1) + " ".repeat(candlewithoutlight - candlewithlight);
+ }
+if (candlelight) {
+    // Add the flame only once at the top
+    make.push(" ".repeat(count - 1) + "🔥" + " ".repeat(count - 1));
+    // Then build the candle triangle
+    for (let i = 1; i <= count; i++) {
+        make.push(candle(i, count));
+    }
+} else {
+    // Just the candle pyramid
+    for (let i = 1; i <= count; i++) {
+        make.push(candle(i, count));
+    }
+}
+let result=""
+for(const makes of make){
+result= result + makes + "\n";
+}
+
+console.log(result);
+
+console.log("my dear");
